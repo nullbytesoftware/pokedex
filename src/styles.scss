@@ -1,10 +1,10 @@
 /**
 * Generated theme by Material Theme Generator
 * https://materialtheme.arcsine.dev
-* Fork at: https://materialtheme.arcsine.dev/?c=YHBhbGV0dGU$YHByaW1hcnk$YF48I2ZmZGUwMCIsIj9lcjwjZmZmNWIzIiwiO2VyPCNmZmQxMDB$LCIlPmBePCMzYjRjY2EiLCI~ZXI8I2M0YzllZiIsIjtlcjwjMjYzM2I3fiwid2Fybj5gXjwjY2MwMDAwIiwiP2VyPCNmMGIzYjMiLCI7ZXI8I2I5MDAwMH4sIj9UZXh0PCMwMDAwMDAiLCI~PTwjZmFmYWZhIiwiO1RleHQ8I2ZmZmZmZiIsIjs9PCMyYzJjMmN$LCJmb250cz5bYEA8KC00fixgQDwoLTN$LGBAPCgtMn4sYEA8KC0xfixgQDxoZWFkbGluZX4sYEA8dGl0bGV$LGBAPHN1YiktMn4sYEA8c3ViKS0xfixgQDxib2R5LTJ$LGBAPGJvZHktMX4sYEA8YnV0dG9ufixgQDxjYXB0aW9ufixgQDxpbnB1dCIsInNpemU$bnVsbH1dLCJpY29uczxGaWxsZWQiLCI~bmVzcz50cnVlLCJ2ZXJzaW9uPjEyfQ==
+* Fork at: https://materialtheme.arcsine.dev/?c=YHBhbGV0dGU$YHByaW1hcnk$YF48IzNiNGNjYSIsIj9lcjwjYzRjOWVmIiwiO2VyPCMyNjMzYjd$LCIlPmBePCNmZmRlMDAiLCI~ZXI8I2ZmZjViMyIsIjtlcjwjZmZkMTAwfiwid2Fybj5gXjwjY2MwMDAwIiwiP2VyPCNmMGIzYjMiLCI7ZXI8I2I5MDAwMH4sIj9UZXh0PCMwMDAwMDAiLCI~PTwjZmFmYWZhIiwiO1RleHQ8I2ZmZmZmZiIsIjs9PCMyYzJjMmN$LCJmb250cz5bYEA8KC00fixgQDwoLTN$LGBAPCgtMn4sYEA8KC0xfixgQDxoZWFkbGluZX4sYEA8dGl0bGV$LGBAPHN1YiktMn4sYEA8c3ViKS0xfixgQDxib2R5LTJ$LGBAPGJvZHktMX4sYEA8YnV0dG9ufixgQDxjYXB0aW9ufixgQDxpbnB1dCIsInNpemU$bnVsbH1dLCJpY29uczxGaWxsZWQiLCI~bmVzcz50cnVlLCJ2ZXJzaW9uPjExfQ==
 */
 
-@use "~@angular/material" as mat;
+@import "~@angular/material/theming";
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
@@ -14,19 +14,19 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500");
 
 $fontConfig: (
-  display-4: mat.define-typography-level(112px, 112px, 300, "Roboto", -0.0134em),
-  display-3: mat.define-typography-level(56px, 56px, 400, "Roboto", -0.0089em),
-  display-2: mat.define-typography-level(45px, 48px, 400, "Roboto", 0em),
-  display-1: mat.define-typography-level(34px, 40px, 400, "Roboto", 0.0074em),
-  headline: mat.define-typography-level(24px, 32px, 400, "Roboto", 0em),
-  title: mat.define-typography-level(20px, 32px, 500, "Roboto", 0.0075em),
-  subheading-2: mat.define-typography-level(16px, 28px, 400, "Roboto", 0.0094em),
-  subheading-1: mat.define-typography-level(15px, 24px, 500, "Roboto", 0.0067em),
-  body-2: mat.define-typography-level(14px, 24px, 500, "Roboto", 0.0179em),
-  body-1: mat.define-typography-level(14px, 20px, 400, "Roboto", 0.0179em),
-  button: mat.define-typography-level(14px, 14px, 500, "Roboto", 0.0893em),
-  caption: mat.define-typography-level(12px, 20px, 400, "Roboto", 0.0333em),
-  input: mat.define-typography-level(inherit, 1.125, 400, "Roboto", 1.5px),
+  display-4: mat-typography-level(112px, 112px, 300, "Roboto", -0.0134em),
+  display-3: mat-typography-level(56px, 56px, 400, "Roboto", -0.0089em),
+  display-2: mat-typography-level(45px, 48px, 400, "Roboto", 0em),
+  display-1: mat-typography-level(34px, 40px, 400, "Roboto", 0.0074em),
+  headline: mat-typography-level(24px, 32px, 400, "Roboto", 0em),
+  title: mat-typography-level(20px, 32px, 500, "Roboto", 0.0075em),
+  subheading-2: mat-typography-level(16px, 28px, 400, "Roboto", 0.0094em),
+  subheading-1: mat-typography-level(15px, 24px, 500, "Roboto", 0.0067em),
+  body-2: mat-typography-level(14px, 24px, 500, "Roboto", 0.0179em),
+  body-1: mat-typography-level(14px, 20px, 400, "Roboto", 0.0179em),
+  button: mat-typography-level(14px, 14px, 500, "Roboto", 0.0893em),
+  caption: mat-typography-level(12px, 20px, 400, "Roboto", 0.0333em),
+  input: mat-typography-level(inherit, 1.125, 400, "Roboto", 1.5px),
 );
 
 // Foreground Elements
@@ -144,46 +144,21 @@ $mat-dark-theme-background: (
 );
 
 // Compute font config
-@include mat.core($fontConfig);
+@include mat-core($fontConfig);
 
 // Theme Config
 
 body {
-  --primary-color: #ffde00;
-  --primary-lighter-color: #fff5b3;
-  --primary-darker-color: #ffd100;
-  --text-primary-color: #{$dark-primary-text};
+  --primary-color: #3b4cca;
+  --primary-lighter-color: #c4c9ef;
+  --primary-darker-color: #2633b7;
+  --text-primary-color: #{$light-primary-text};
   --text-primary-lighter-color: #{$dark-primary-text};
-  --text-primary-darker-color: #{$dark-primary-text};
+  --text-primary-darker-color: #{$light-primary-text};
 
-  padding: 0rem;
   margin: 0rem;
-  box-sizing: border-box;
 }
 $mat-primary: (
-  main: #ffde00,
-  lighter: #fff5b3,
-  darker: #ffd100,
-  200: #ffde00,
-  // For slide toggle,
-  contrast:
-    (
-      main: $dark-primary-text,
-      lighter: $dark-primary-text,
-      darker: $dark-primary-text,
-    ),
-);
-$theme-primary: mat.define-palette($mat-primary, main, lighter, darker);
-
-body {
-  --accent-color: #3b4cca;
-  --accent-lighter-color: #c4c9ef;
-  --accent-darker-color: #2633b7;
-  --text-accent-color: #{$light-primary-text};
-  --text-accent-lighter-color: #{$dark-primary-text};
-  --text-accent-darker-color: #{$light-primary-text};
-}
-$mat-accent: (
   main: #3b4cca,
   lighter: #c4c9ef,
   darker: #2633b7,
@@ -196,7 +171,30 @@ $mat-accent: (
       darker: $light-primary-text,
     ),
 );
-$theme-accent: mat.define-palette($mat-accent, main, lighter, darker);
+$theme-primary: mat-palette($mat-primary, main, lighter, darker);
+
+body {
+  --accent-color: #ffde00;
+  --accent-lighter-color: #fff5b3;
+  --accent-darker-color: #ffd100;
+  --text-accent-color: #{$dark-primary-text};
+  --text-accent-lighter-color: #{$dark-primary-text};
+  --text-accent-darker-color: #{$dark-primary-text};
+}
+$mat-accent: (
+  main: #ffde00,
+  lighter: #fff5b3,
+  darker: #ffd100,
+  200: #ffde00,
+  // For slide toggle,
+  contrast:
+    (
+      main: $dark-primary-text,
+      lighter: $dark-primary-text,
+      darker: $dark-primary-text,
+    ),
+);
+$theme-accent: mat-palette($mat-accent, main, lighter, darker);
 
 body {
   --warn-color: #cc0000;
@@ -219,29 +217,15 @@ $mat-warn: (
       darker: $light-primary-text,
     ),
 );
-$theme-warn: mat.define-palette($mat-warn, main, lighter, darker);
-$theme: (
-  primary: $theme-primary,
-  accent: $theme-accent,
-  warn: $theme-warn,
-  is-dark: false,
-  foreground: $mat-light-theme-foreground,
-  background: $mat-light-theme-background,
-);
-$altTheme: (
-  primary: $theme-primary,
-  accent: $theme-accent,
-  warn: $theme-warn,
-  is-dark: true,
-  foreground: $mat-dark-theme-foreground,
-  background: $mat-dark-theme-background,
-);
+$theme-warn: mat-palette($mat-warn, main, lighter, darker);
+$theme: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
+$altTheme: mat-dark-theme($theme-primary, $theme-accent, $theme-warn);
 
 // Theme Init
-@include mat.all-component-themes($theme);
+@include angular-material-theme($theme);
 
 .theme-alternate {
-  @include mat.all-component-themes($altTheme);
+  @include angular-material-theme($altTheme);
 }
 
 // Specific component overrides, pieces that are not in line with the general theming
@@ -268,4 +252,3 @@ $altTheme: (
     font-family: "Roboto";
   }
 }
-

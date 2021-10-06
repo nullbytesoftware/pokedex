@@ -1,9 +1,10 @@
 import { HttpParams } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { BehaviorSubject, Observable, Subscription } from 'rxjs';
-import { delay, finalize, map, switchMap } from 'rxjs/operators';
+import { delay, finalize, map, switchMap, tap } from 'rxjs/operators';
 import { PokemonList } from 'src/app/core/models/pokemon.item';
 import { ApiService } from 'src/app/core/services/api.service';
+import { PokemonService } from 'src/app/core/services/pokemon.service';
 
 @Component({
   selector: 'app-home-page',
@@ -11,7 +12,7 @@ import { ApiService } from 'src/app/core/services/api.service';
   styleUrls: ['./home-page.component.scss'],
 })
 export class HomePageComponent implements OnInit, OnDestroy {
-  constructor(public apiService: ApiService) {}
+  constructor(private pokemonService: PokemonService) {}
 
   pokemons: PokemonList;
   sub: Subscription;
@@ -20,9 +21,17 @@ export class HomePageComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.sub = this.currentPageIndex
-      .pipe(switchMap((pageIndex) => this.fetchPokemons(pageIndex)))
+      .pipe(
+        tap(() => {
+          this.loading = true;
+        }),
+        switchMap((pageIndex) => this.pokemonService.fetchPokemons(pageIndex)),
+        tap(() => {
+          this.loading = false;
+        })
+      )
       .subscribe((data) => {
-        window.scroll(0,0);
+        window.scroll(0, 0);
         this.pokemons = data;
       });
   }
@@ -31,20 +40,6 @@ export class HomePageComponent implements OnInit, OnDestroy {
     this.currentPageIndex.next(newIndex);
   }
 
-  fetchPokemons(pageIndex: number): Observable<PokemonList> {
-    this.loading = true;
-    return this.apiService
-      .get<PokemonList>('pokemon', {
-        offset: pageIndex * 20,
-        limit: 20,
-      })
-      .pipe(
-        delay(500),
-        finalize(() => {
-          this.loading = false;
-        })
-      );
-  }
   ngOnDestroy(): void {
     this.sub.unsubscribe();
   }

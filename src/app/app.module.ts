@@ -13,6 +13,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { CaptializePipe } from './core/pipes/captialize.pipe';
 import { PaginatorComponent } from './components/paginator/paginator.component';
+import { MatInputModule } from '@angular/material/input';
+import { HeaderComponent } from './components/header/header.component';
+import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,13 +24,16 @@ import { PaginatorComponent } from './components/paginator/paginator.component';
     PokemonDetailsPageComponent,
     PokemonListItemComponent,
     CaptializePipe,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
+    MatIconModule,
     MatButtonModule,
+    MatInputModule,
     MatProgressSpinnerModule,
     MatCardModule,
     HttpClientModule,

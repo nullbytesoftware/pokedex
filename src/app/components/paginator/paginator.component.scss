@@ -18,18 +18,18 @@
     align-items: center;
 
     &.active {
-      background-color: var(--primary-color);
+      background-color: var(--accent-color);
       i,
       p {
-        color: var(--accent-color);
+        color: var(--primary-color);
       }
     }
     &:hover {
-      background-color: var(--primary-darker-color);
+      background-color: var(--accent-darker-color);
 
       i,
       p {
-        color: var(--accent-color);
+        color: var(--primary-color);
       }
     }
 
@@ -38,11 +38,11 @@
       text-align: center;
       padding: 0rem;
       margin: 0rem;
-      color: var(--accent-color);
+      color: var(--primary-color);
     }
     i {
       font-size: 1.5rem;
-      color: var(--accent-color);
+      color: var(--primary-color);
       font-weight: bold;
 
       &:lang(ar) {
