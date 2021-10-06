@@ -1,0 +1,21 @@
+<div class="pagination">
+  <div class="pagination__box" (click)="onPrevious()">
+    <i class="las la-angle-left"></i>
+  </div>
+  <div
+    class="pagination__box"
+    [ngClass]="currentPageIndex === page ? 'active' : ''"
+    *ngFor="
+      let page of pagesArray.slice(
+        math.max(0, currentPageIndex - 3),
+        math.min(math.max(0, currentPageIndex - 3) + 6, pageCount)
+      )
+    "
+    (click)="onPageClicked(page)"
+  >
+    <p>{{ page + 1 }}</p>
+  </div>
+  <div class="pagination__box" (click)="onNext()">
+    <i class="las la-angle-right"></i>
+  </div>
+</div>

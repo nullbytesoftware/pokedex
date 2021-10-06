@@ -10,11 +10,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { PokemonListItemComponent } from './components/pokemon-list-item/pokemon-list-item.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { CaptializePipe } from './core/pipes/captialize.pipe';
+import { PaginatorComponent } from './components/paginator/paginator.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
+    PaginatorComponent,
     PokemonDetailsPageComponent,
     PokemonListItemComponent,
     CaptializePipe,
@@ -25,6 +28,7 @@ import { CaptializePipe } from './core/pipes/captialize.pipe';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
+    MatProgressSpinnerModule,
     MatCardModule,
     HttpClientModule,
   ],
