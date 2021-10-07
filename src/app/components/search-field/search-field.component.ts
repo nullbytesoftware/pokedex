@@ -59,10 +59,9 @@ export class SearchFieldComponent implements OnInit {
     this.router.navigate(['pokemons', this.pokemon?.name]);
     this.overlayVisible = false;
   }
-  onFocusOut()
-  {
+  onFocusOut() {
     setTimeout(() => {
-       this.overlayVisible = false;
-    }, 500);
+      this.overlayVisible = false;
+    }, 200);
   }
 }
