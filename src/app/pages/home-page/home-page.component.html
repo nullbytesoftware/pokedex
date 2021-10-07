@@ -14,7 +14,7 @@
     ></app-pokemon-list-item>
 
     <paginator
-      [currentPageIndex]="currentPageIndex.value"
+      [currentPageIndex]="currentPageIndex"
       [pageCount]="pokemons.count"
       (onIndexChanged)="onPageIndexChanged($event)"
     ></paginator>

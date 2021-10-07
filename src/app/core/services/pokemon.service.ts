@@ -11,9 +11,9 @@ import { ApiService } from './api.service';
 export class PokemonService {
   constructor(private apiService: ApiService) {}
 
-  fetchPokemons(
-    pageIndex: number = 0
-  ): Observable<PokemonList> {
+  fetchPokemons(pageIndex: number = 0): Observable<PokemonList> {
+    
+
     return this.apiService
       .get<PokemonList>('pokemon', {
         offset: pageIndex * 20,
