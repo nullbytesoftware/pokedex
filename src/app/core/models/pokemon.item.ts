@@ -1,6 +1,6 @@
 import { StringMap } from '@angular/compiler/src/compiler_facade_interface';
 
-export interface PokemonList {
+export interface PokemonsResponse {
   count: number;
   next: String;
   previous: string;

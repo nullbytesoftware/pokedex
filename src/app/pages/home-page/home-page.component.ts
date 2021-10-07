@@ -3,7 +3,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 import { delay, finalize, map, switchMap, tap } from 'rxjs/operators';
-import { PokemonList } from 'src/app/core/models/pokemon.item';
+import { PokemonsResponse } from 'src/app/core/models/pokemon.item';
 import { ApiService } from 'src/app/core/services/api.service';
 import { PokemonService } from 'src/app/core/services/pokemon.service';
 
@@ -19,7 +19,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
     private activeRoute: ActivatedRoute
   ) {}
 
-  pokemons: PokemonList;
+  pokemons: PokemonsResponse;
   sub: Subscription;
   loading: boolean = false;
 

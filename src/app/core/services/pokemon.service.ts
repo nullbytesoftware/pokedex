@@ -3,7 +3,7 @@ import { Observable, of, Subject } from 'rxjs';
 import { catchError, delay, finalize, map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { PokemonDetails } from '../models/pokemon.details';
-import { PokemonList } from '../models/pokemon.item';
+import { PokemonsResponse } from '../models/pokemon.item';
 import { ApiService } from './api.service';
 
 @Injectable({
@@ -12,9 +12,9 @@ import { ApiService } from './api.service';
 export class PokemonService {
   constructor(private apiService: ApiService) {}
 
-  fetchPokemons(pageIndex: number = 0): Observable<PokemonList> {
+  fetchPokemons(pageIndex: number = 0): Observable<PokemonsResponse> {
     return this.apiService
-      .get<PokemonList>('pokemon', {
+      .get<PokemonsResponse>('pokemon', {
         offset: pageIndex * 20,
         limit: 20,
       })
