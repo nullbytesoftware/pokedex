@@ -33,7 +33,7 @@ export class SearchFieldComponent implements OnInit {
         distinctUntilChanged(),
         tap(() => (this.loading = true)),
         switchMap((text: string) => {
-          if (!text.trim()) return throwError('no text');
+          if (!text.trim()) return of(undefined);
           else
             return this.pokemonService.fetchPokemonDetails(
               text.trim().toLowerCase()
