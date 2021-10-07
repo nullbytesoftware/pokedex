@@ -1,8 +1,19 @@
 .search-input-field {
-    font-size: 1rem;
-    width: 20rem;
-    border-color: red !important;
-    input::placeholder {
-      color: white !important;
-    }
+  font-size: 1rem;
+  width: 20rem;
+  border-color: red !important;
+  input::placeholder {
+    color: white !important;
   }
+}
+.search-result-overlay {
+  background-color: white;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 0px 0px 1rem 1rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

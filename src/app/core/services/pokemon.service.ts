@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
-import { delay, finalize, map } from 'rxjs/operators';
+import { Observable, of, Subject } from 'rxjs';
+import { catchError, delay, finalize, map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { PokemonDetails } from '../models/pokemon.details';
 import { PokemonList } from '../models/pokemon.item';
@@ -21,7 +21,12 @@ export class PokemonService {
       .pipe(delay(500));
   }
 
-  fetchPokemonDetails(name: string): Observable<PokemonDetails> {
-    return this.apiService.get<PokemonDetails>(`pokemon/${name}`);
+  fetchPokemonDetails(name: string): Observable<PokemonDetails | undefined> {
+    return this.apiService.get<PokemonDetails>(`pokemon/${name}`).pipe(
+      catchError((err) => {
+        console.log(err);
+        return of(undefined);
+      })
+    );
   }
 }

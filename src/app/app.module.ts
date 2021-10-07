@@ -19,6 +19,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatListModule } from '@angular/material/list';
 import { SearchFieldComponent } from './components/search-field/search-field.component';
+import {OverlayModule} from '@angular/cdk/overlay';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +42,7 @@ import { SearchFieldComponent } from './components/search-field/search-field.com
     MatButtonModule,
     MatListModule,
     MatInputModule,
+    OverlayModule,
     MatProgressSpinnerModule,
     MatCardModule,
     HttpClientModule,

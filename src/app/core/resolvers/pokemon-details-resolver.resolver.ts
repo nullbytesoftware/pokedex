@@ -11,14 +11,17 @@ import { PokemonService } from '../services/pokemon.service';
 @Injectable({
   providedIn: 'root',
 })
-export class PokemonDetailsResolver implements Resolve<PokemonDetails> {
+export class PokemonDetailsResolver
+  implements Resolve<PokemonDetails | undefined>
+{
   constructor(private pokemonService: PokemonService) {}
 
   resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ): Observable<PokemonDetails> | Promise<PokemonDetails> {
-  
+  ):
+    | Observable<PokemonDetails | undefined>
+    | Promise<PokemonDetails | undefined> {
     return this.pokemonService.fetchPokemonDetails(route.params.name);
   }
 }
