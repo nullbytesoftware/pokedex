@@ -9,7 +9,7 @@
     autocomplete="off"
     #trigger="cdkOverlayOrigin"
     (focus)="overlayVisible = true"
-    (focusout)="overlayVisible = false"
+    (focusout)="onFocusOut()"
   />
   <mat-icon>search</mat-icon>
 </mat-form-field>
@@ -27,19 +27,21 @@
         class="search-result-overlay__content"
         *ngIf="pokemon; else noContent"
       >
-        found some pokemon
+        <img [src]="pokemon.sprites.back_default" />
+        <p>{{ pokemon.name }}</p>
+
+        <a (click)="navigateToPokemon()" [routerLink]=""
+          ><i class="las la-chevron-right"></i
+        ></a>
       </div>
     </ng-template>
     <ng-template #noContent>
-      <div
-        class="search-result-overlay__content"
-        *ngIf="!pokemon && currentSearchValue; else noSearchEntered"
-      >
+      <div *ngIf="!pokemon && currentSearchValue; else noSearchEntered">
         Could not found this pokemon
       </div>
     </ng-template>
     <ng-template #noSearchEntered>
-      <div class="search-result-overlay__content">Enter the name of the pokemon</div>
+      <div>Enter the name of the pokemon</div>
     </ng-template>
   </div>
 </ng-template>

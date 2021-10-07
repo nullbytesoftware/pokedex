@@ -16,4 +16,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+      font-weight: bold;
+    }
+
+    a i {
+      font-weight: bold;
+      font-size: 2rem;
+      transition: transform 0.2s ease-out;
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
 }

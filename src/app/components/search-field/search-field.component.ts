@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 import { empty, of, throwError } from 'rxjs';
 import {
   catchError,
@@ -18,7 +19,7 @@ import { PokemonService } from 'src/app/core/services/pokemon.service';
   styleUrls: ['./search-field.component.scss'],
 })
 export class SearchFieldComponent implements OnInit {
-  constructor(private pokemonService: PokemonService) {}
+  constructor(private pokemonService: PokemonService, private router: Router) {}
 
   searchControl: FormControl;
   overlayVisible = false;
@@ -29,7 +30,7 @@ export class SearchFieldComponent implements OnInit {
     this.searchControl = new FormControl('');
     this.searchControl.valueChanges
       .pipe(
-        debounceTime(500),
+        debounceTime(300),
         distinctUntilChanged(),
         tap(() => (this.loading = true)),
         switchMap((text: string) => {
@@ -42,18 +43,26 @@ export class SearchFieldComponent implements OnInit {
         tap(() => (this.loading = false)),
         catchError((err) => {
           this.loading = false;
-          console.log(err);
           return of(undefined);
         })
       )
       .subscribe((pokemon: PokemonDetails | undefined) => {
-        console.log(pokemon);
-
         this.pokemon = pokemon;
       });
   }
 
   get currentSearchValue(): string {
     return this.searchControl.value;
+  }
+
+  navigateToPokemon() {
+    this.router.navigate(['pokemons', this.pokemon?.name]);
+    this.overlayVisible = false;
+  }
+  onFocusOut()
+  {
+    setTimeout(() => {
+       this.overlayVisible = false;
+    }, 500);
   }
 }
