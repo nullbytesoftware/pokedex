@@ -1,6 +1,9 @@
 <mat-toolbar color="primary">
   <nav class="navbar">
-    <span class="logo" [routerLink]="['']">POKEDEX</span>
+    <div class="logo" [routerLink]="['']">
+      <img [src]="'/assets/pikachu.png'" width="50px" />
+      <span>POKEDEX</span>
+    </div>
 
     <app-search-field></app-search-field>
   </nav>
