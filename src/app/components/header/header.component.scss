@@ -1,15 +1,23 @@
-.navbar {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0rem var(--hor-padding);
+.toolbar {
+  .navbar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem var(--hor-padding);
 
-  .logo {
-    color: var(--accent-color);
-    cursor: pointer;
+    .logo {
+      color: var(--accent-color);
+      cursor: pointer;
+    }
   }
 
-
+  @media (max-width: 700px) {
+    min-height: 125px;
+    padding: 5rem 0rem;
+    .navbar {
+      flex-direction: column;
+    }
+  }
 }

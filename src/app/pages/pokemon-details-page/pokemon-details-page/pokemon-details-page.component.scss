@@ -1,10 +1,15 @@
 .pokemon-details {
   padding: 2rem var(--hor-padding);
-  display: flex;
-  justify-content: center;
+
+  display: grid;
+  grid-template-columns: calc(var(--hor-padding) / 2) 1fr calc(
+      var(--hor-padding) / 2
+    );
   .hero {
+    grid-column: 2/3;
+
     &__card {
-      width: 50rem;
+      width: minmax(50rem, 80%);
       &__image {
         background-size: cover;
       }
