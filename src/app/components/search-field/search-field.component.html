@@ -1,0 +1,10 @@
+<mat-form-field color="accent" class="search-input-field" appearance="standard">
+  <input
+    matInput
+    #message
+    maxlength="18"
+    placeholder="Enter pokemon name..."
+    [formControl]="searchControl"
+  />
+  <mat-icon>search</mat-icon>
+</mat-form-field>

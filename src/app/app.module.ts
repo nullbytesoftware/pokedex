@@ -16,7 +16,9 @@ import { PaginatorComponent } from './components/paginator/paginator.component';
 import { MatInputModule } from '@angular/material/input';
 import { HeaderComponent } from './components/header/header.component';
 import { MatIconModule } from '@angular/material/icon';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatListModule } from '@angular/material/list';
+import { SearchFieldComponent } from './components/search-field/search-field.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +28,7 @@ import { MatListModule } from '@angular/material/list';
     PokemonListItemComponent,
     CaptializePipe,
     HeaderComponent,
+    SearchFieldComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +36,8 @@ import { MatListModule } from '@angular/material/list';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
+    ReactiveFormsModule,
+    FormsModule,
     MatButtonModule,
     MatListModule,
     MatInputModule,
