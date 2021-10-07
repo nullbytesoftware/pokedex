@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PokemonListItem } from 'src/app/core/models/pokemon.item';
 
 @Component({
@@ -9,7 +10,9 @@ import { PokemonListItem } from 'src/app/core/models/pokemon.item';
 export class PokemonListItemComponent implements OnInit {
   @Input() pokemonItem: PokemonListItem;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
+
+
 }

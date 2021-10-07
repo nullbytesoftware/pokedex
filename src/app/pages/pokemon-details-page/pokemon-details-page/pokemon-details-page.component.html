@@ -1,1 +1,38 @@
-<p>pokemon-details-page works!</p>
+<main class="pokemon-details">
+  <section class="hero">
+    <mat-card class="hero__card">
+      <mat-card-header>
+        <div
+          mat-card-avatar
+          class="hero__card__image"
+          [ngStyle]="{
+            'background-image':
+              'url(' + pokemonDetails.sprites.back_default + ')'
+          }"
+        ></div>
+        <mat-card-title>{{ pokemonDetails.name }}</mat-card-title>
+        <mat-card-subtitle>{{ pokemonDetails.species.name }}</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+        <mat-list>
+          <div mat-subheader>Stats</div>
+          <mat-list-item *ngFor="let stat of pokemonDetails.stats">
+            <div class="list-item">
+              <h4>{{ stat.stat.name | captialize }}:</h4>
+              <p>{{ stat.base_stat }}</p>
+            </div>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <div mat-subheader>Types</div>
+          <mat-list-item *ngFor="let type of pokemonDetails.types">
+            <div class="list-item">
+              <h4>Slot {{ type.slot.toString() | captialize }}:</h4>
+              <p>{{ type.type.name }}</p>
+            </div>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </section>
+</main>

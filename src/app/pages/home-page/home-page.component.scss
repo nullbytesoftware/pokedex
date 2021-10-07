@@ -1,5 +1,5 @@
 .pokemons-list {
-  padding: 1rem 0rem 5rem 0rem;
+  padding: 1rem var(--hor-padding) 3rem var(--hor-padding);
   .loader {
     min-height: 100vh;
     display: grid;

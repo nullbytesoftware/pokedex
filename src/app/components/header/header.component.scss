@@ -4,10 +4,11 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem;
+  padding: 0rem var(--hor-padding);
 
   .logo {
     color: var(--accent-color);
+    cursor: pointer;
   }
 
   .search-input-field {

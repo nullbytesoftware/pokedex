@@ -24,9 +24,13 @@ export class HomePageComponent implements OnInit, OnDestroy {
   loading: boolean = false;
 
   get currentPageIndex(): number {
-    return +(this.activeRoute.snapshot.queryParams.page ?? 1) - 1;
+    return this.pageToIndex(this.activeRoute.snapshot.queryParams.page);
   }
 
+  pageToIndex(page: string | number): number {
+    return +(page ?? 1) - 1;
+  }
+  
   ngOnInit(): void {
     this.sub = this.activeRoute.queryParams
       .pipe(
@@ -34,18 +38,15 @@ export class HomePageComponent implements OnInit, OnDestroy {
           this.loading = true;
         }),
         switchMap((qParams) => {
-          let pageIndex: number = +(qParams.page ?? 0);
-
-          return this.pokemonService.fetchPokemons(pageIndex);
+          return this.pokemonService.fetchPokemons(
+            this.pageToIndex(qParams.page)
+          );
         }),
         tap(() => {
           this.loading = false;
         })
       )
       .subscribe((data) => {
-        console.log(data);
-        console.log(this.currentPageIndex);
-
         window.scroll(0, 0);
         this.pokemons = data;
       });
@@ -57,7 +58,6 @@ export class HomePageComponent implements OnInit, OnDestroy {
       queryParams: {
         page: newIndex + 1,
       },
-      queryParamsHandling: 'merge',
     });
   }
 

@@ -180,6 +180,7 @@ body {
   --text-accent-color: #{$dark-primary-text};
   --text-accent-lighter-color: #{$dark-primary-text};
   --text-accent-darker-color: #{$dark-primary-text};
+  --hor-padding: 2rem;
 }
 $mat-accent: (
   main: #ffde00,

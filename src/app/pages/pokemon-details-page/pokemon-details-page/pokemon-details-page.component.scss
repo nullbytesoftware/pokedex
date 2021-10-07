@@ -1,0 +1,23 @@
+.pokemon-details {
+  padding: 2rem var(--hor-padding);
+  display: flex;
+  justify-content: center;
+  .hero {
+    &__card {
+      width: 50rem;
+      &__image {
+        background-size: cover;
+      }
+      .list-item {
+        display: flex;
+        h4 {
+          margin-right: 0.25rem;
+        }
+        p {
+          margin: 0rem;
+          padding: 0rem;
+        }
+      }
+    }
+  }
+}

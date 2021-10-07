@@ -16,6 +16,7 @@ import { PaginatorComponent } from './components/paginator/paginator.component';
 import { MatInputModule } from '@angular/material/input';
 import { HeaderComponent } from './components/header/header.component';
 import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +34,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    MatListModule,
     MatInputModule,
     MatProgressSpinnerModule,
     MatCardModule,

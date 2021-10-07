@@ -1,1 +1,3 @@
-<mat-card class="pokemon-card">{{ pokemonItem.name | captialize }}</mat-card>
+<mat-card class="pokemon-card" [routerLink]="['/pokemons', pokemonItem.name]">{{
+  pokemonItem.name | captialize
+}}</mat-card>
