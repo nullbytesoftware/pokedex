@@ -19,8 +19,6 @@ export class HttpCachingInterceptor implements HttpInterceptor {
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    console.log('intercepting');
-
     if (req.method !== 'GET') {
       return next.handle(req);
     }
